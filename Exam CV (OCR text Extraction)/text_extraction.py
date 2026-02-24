@@ -10,7 +10,7 @@ processor = TrOCRProcessor.from_pretrained("microsoft/trocr-base-printed")
 model = VisionEncoderDecoderModel.from_pretrained("microsoft/trocr-base-printed")
 
 # Configure Gemini API
-genai.configure(api_key="AIzaSyCdRBRihIfq3gZRbRoz3xSd8xI_dAWW5pg")  # Replace with your actual API key
+genai.configure(api_key="USE GEMINI KEY")  # Replace with your actual API key
 
 # Define coordinates for student details (update as per your exam sheet format)
 student_info_coordinates = {
@@ -54,3 +54,4 @@ def extract_student_number(image_path):
     response = model.generate_content([pil_image, "Extract only the student number from this image. Return digits only."])
 
     return response.text.strip()
+
